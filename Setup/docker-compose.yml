@@ -1,0 +1,102 @@
+# sudo docker swarm init
+# sudo docker network create --attachable -d overlay springbankNet
+version: '3.8'
+services:
+  axonserver:
+    container_name: axon-server
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+    network_mode: springbankNet
+    # restart: always
+    image: 'axoniq/axonserver'
+
+  mongo:
+    container_name: mongo-container
+    ports:
+      - '27017:27017'
+    network_mode: springbankNet
+    # restart: always
+    volumes:
+      - './mongodb_data_container:/data/db'
+    image: 'mongo'
+
+  mysql:
+    container_name: mysql-container
+    ports:
+      - '3306:3306'
+    network_mode: springbankNet
+    environment:
+      - MYSQL_ROOT_PASSWORD=springbankRootPsw
+    # restart: always
+    volumes:
+      - './mysql_data_container:/var/lib/mysql'
+    image: 'mysql'
+
+  adminer:
+    container_name: adminer
+    ports:
+      - '8025:8080'
+    network_mode: springbankNet
+    environment:
+      - ADMINER_DEFAULT_SERVER=mysql-container
+    # restart: always
+    image: 'adminer'
+
+#   app:
+#     container_name: be_datawarehouse
+#     build: .
+#     ports:
+#       - 8088:8088
+#     network_mode: "host"
+#     logging:
+#       driver: "json-file"
+#       options:
+#         max-size: "100m"
+#     volumes:
+#       - ./datawarehouse.jar:/usr/src/app/datawarehouse.jar
+#       - ./bootstrap.yml:/usr/src/app/bootstrap.yml
+#       - ./logs:/usr/src/app/logs/
+
+#   # ZIPKINS
+#   zipkin_storage:
+#     image: openzipkin/zipkin-mysql
+#     container_name: zipkin-storage
+#     # Uncomment to expose the storage port for testing
+#     ports:
+#       - 3306:3306
+
+#   # The zipkin process services the UI, and also exposes a POST endpoint that
+#   # instrumentation can send trace data to. Scribe is disabled by default.
+#   zipkin:
+#     image: openzipkin/zipkin
+#     container_name: zipkin
+#     depends_on:
+#       - zipkin_storage
+#     # Environment settings are defined here https://github.com/openzipkin/zipkin/blob/master/zipkin-server/README.md#environment-variables
+#     environment:
+#       - "STORAGE_TYPE=mysql"
+#       - "MYSQL_HOST=zipkin-storage" # Container name of storage
+#     ports:
+#       - "9411:9411"
+
+#   # Adds a cron to process spans since midnight every hour, and all spans each day
+#   # This data is served by http://192.168.99.100:8080/dependency
+#   #
+#   # For more details, see https://github.com/openzipkin/docker-zipkin-dependencies
+#   dependencies:
+#     image: openzipkin/zipkin-dependencies
+#     container_name: zipkin-dependencies
+#     entrypoint: crond -f
+#     environment:
+#       - "STORAGE_TYPE=mysql"
+#       - "MYSQL_HOST=zipkin-storage" # Container name of storage
+#       # Add the baked-in username and password for the zipkin-mysql image
+#       - "MYSQL_USER=zipkin"
+#       - "MYSQL_PASS=zipkin"
+#       # Uncomment to see dependency processing logs
+#       # - ZIPKIN_LOG_LEVEL=DEBUG
+#       # Uncomment to adjust memory used by the dependencies job
+#       # - JAVA_OPTS=-verbose:gc -Xms1G -Xmx1G
+#     depends_on:
+#       - zipkin_storage
