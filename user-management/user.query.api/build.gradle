@@ -5,8 +5,8 @@ plugins {
 }
 
 group = 'com.springbank'
-version = '0.0.1'
-sourceCompatibility = '16'
+version = '1.0.0'
+sourceCompatibility = '11'
 
 configurations {
     compileOnly {
@@ -20,13 +20,11 @@ repositories {
 
 dependencies {
     implementation project(':user.core')
-    implementation 'org.axonframework:axon-spring-boot-starter:4.5'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.axonframework:axon-spring-boot-starter:4.5'
     compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
