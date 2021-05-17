@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.springbank'
 version = '1.0.0'
-sourceCompatibility = '11'
+sourceCompatibility = '16'
 
 configurations {
     compileOnly {

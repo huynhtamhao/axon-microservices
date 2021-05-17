@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.springbank'
 version = '1.0.0'
-sourceCompatibility = '11'
+sourceCompatibility = '16'
 
 configurations {
     compileOnly {
@@ -22,6 +22,8 @@ dependencies {
     implementation project(':user.core')
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.axonframework:axon-spring-boot-starter:4.5'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
