@@ -1,0 +1,14 @@
+{
+    "user": {
+        "firstname": "Hao",
+        "lastname": "Huynh",
+        "emailAddress": "haohuynh@abc.com",
+        "account": {
+            "username": "hao",
+            "password": "P@assw0rd1",
+            "roles": [
+                "READ_PRIVILEGE", "WRITE_PRIVILEGE"
+            ]
+        }
+    }
+}

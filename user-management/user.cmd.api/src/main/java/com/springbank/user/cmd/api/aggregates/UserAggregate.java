@@ -24,14 +24,14 @@ public class UserAggregate {
     private String id;
     private User user;
 
-//    private final PasswordEncoder passwordEncoder;
-//
-//    public UserAggregate() {
-//        passwordEncoder = new PasswordEncoderImpl();
-//    }
-
-    @Autowired
     private final PasswordEncoder passwordEncoder;
+
+    public UserAggregate() {
+        passwordEncoder = new PasswordEncoderImpl();
+    }
+
+//    @Autowired
+//    private final PasswordEncoder passwordEncoder;
 
     @CommandHandler
     public UserAggregate(RegisterUserCommand command) {

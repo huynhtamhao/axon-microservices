@@ -29,6 +29,8 @@ public class RegisterUserController {
         var id = UUID.randomUUID().toString();
         command.setId(id);
         try {
+
+            // commandGateway.sendAndWait(command); // Sau khi thực hiện xong mới trả response
             commandGateway.send(command);
             return new ResponseEntity<>(new RegisterUserResponse(id, "User successfully registered!"), HttpStatus.CREATED);
         } catch (Exception e) {
