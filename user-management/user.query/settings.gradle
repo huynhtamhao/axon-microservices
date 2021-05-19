@@ -1,0 +1,2 @@
+rootProject.name = 'user.query.api'
+include('user.core')
