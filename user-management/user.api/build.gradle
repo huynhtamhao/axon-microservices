@@ -1,0 +1,5 @@
+dependencies {
+    implementation project(':user.core')
+    implementation project(':user.cmd')
+    implementation project(':user.query')
+}
