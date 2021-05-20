@@ -1,0 +1,13 @@
+package com.springbank.user.api.query.handles;
+
+import com.springbank.user.core.events.UserRegisteredEvent;
+import com.springbank.user.core.events.UserRemovedEvent;
+import com.springbank.user.core.events.UserUpdatedEvent;
+
+public interface UserEventHandler {
+    void on(UserRegisteredEvent event);
+
+    void on(UserUpdatedEvent event);
+
+    void on(UserRemovedEvent event);
+}
