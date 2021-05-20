@@ -6,6 +6,8 @@ import com.springbank.user.core.events.UserUpdatedEvent;
 
 public interface UserEventHandler {
     void on(UserRegisteredEvent event);
+
     void on(UserUpdatedEvent event);
+
     void on(UserRemovedEvent event);
 }

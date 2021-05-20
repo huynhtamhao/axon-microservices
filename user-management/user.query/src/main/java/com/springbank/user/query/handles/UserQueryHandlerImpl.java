@@ -1,15 +1,17 @@
 package com.springbank.user.query.handles;
 
-import com.springbank.user.query.api.dto.UserLookupResponse;
-import com.springbank.user.query.api.queries.FindAllUsersQuery;
-import com.springbank.user.query.api.queries.FindUserByIdQuery;
-import com.springbank.user.query.api.queries.SearchUsersQuery;
-import com.springbank.user.query.api.repositories.UserRepository;
+import com.springbank.user.core.models.User;
+import com.springbank.user.query.dto.UserLookupResponse;
+import com.springbank.user.query.queries.FindAllUsersQuery;
+import com.springbank.user.query.queries.FindUserByIdQuery;
+import com.springbank.user.query.queries.SearchUsersQuery;
+import com.springbank.user.query.repositories.UserRepository;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class UserQueryHandlerImpl implements UserQueryHandler {
@@ -23,8 +25,12 @@ public class UserQueryHandlerImpl implements UserQueryHandler {
     @QueryHandler
     @Override
     public UserLookupResponse getUserById(FindUserByIdQuery query) {
-        var user = userRepository.findById(query.getId());
-        return user.isPresent() ? new UserLookupResponse(user.get()) : null;
+//        var user = userRepository.findById(query.getId());
+//        return user.isPresent() ? new UserLookupResponse(user.get()) : null;
+//        return user.map(UserLookupResponse::new).orElse(null);
+        Optional<User> user = userRepository.findById(query.getId());
+        return new UserLookupResponse(user.orElse(null));
+
     }
 
     @QueryHandler
