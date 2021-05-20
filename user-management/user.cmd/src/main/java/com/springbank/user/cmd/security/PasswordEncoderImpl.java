@@ -1,4 +1,4 @@
-package com.springbank.user.api.cmd.security;
+package com.springbank.user.cmd.security;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

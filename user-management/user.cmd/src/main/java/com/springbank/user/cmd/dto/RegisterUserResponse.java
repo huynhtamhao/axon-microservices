@@ -1,4 +1,4 @@
-package com.springbank.user.api.cmd.dto;
+package com.springbank.user.cmd.dto;
 
 import com.springbank.user.core.dto.BaseResponse;
 

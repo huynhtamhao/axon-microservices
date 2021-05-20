@@ -1,7 +1,7 @@
-package com.springbank.user.api.cmd;
+package com.springbank.user.cmd;
 
-import com.springbank.user.api.cmd.commands.RegisterUserCommand;
-import com.springbank.user.api.cmd.dto.RegisterUserResponse;
+import com.springbank.user.cmd.commands.RegisterUserCommand;
+import com.springbank.user.cmd.dto.RegisterUserResponse;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

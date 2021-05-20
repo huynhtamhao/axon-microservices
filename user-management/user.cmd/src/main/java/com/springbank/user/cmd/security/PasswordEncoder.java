@@ -1,4 +1,4 @@
-package com.springbank.user.api.cmd.security;
+package com.springbank.user.cmd.security;
 
 public interface PasswordEncoder {
     String hashPassword(String password);

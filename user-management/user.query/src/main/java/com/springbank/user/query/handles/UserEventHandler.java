@@ -1,4 +1,4 @@
-package com.springbank.user.api.query.handles;
+package com.springbank.user.query.handles;
 
 import com.springbank.user.core.events.UserRegisteredEvent;
 import com.springbank.user.core.events.UserRemovedEvent;

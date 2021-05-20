@@ -1,10 +1,10 @@
-package com.springbank.user.api.cmd.aggregates;
+package com.springbank.user.cmd.aggregates;
 
-import com.springbank.user.api.cmd.security.PasswordEncoder;
-import com.springbank.user.api.cmd.security.PasswordEncoderImpl;
-import com.springbank.user.api.cmd.commands.RegisterUserCommand;
-import com.springbank.user.api.cmd.commands.RemoveUserCommand;
-import com.springbank.user.api.cmd.commands.UpdateUserCommand;
+import com.springbank.user.cmd.security.PasswordEncoder;
+import com.springbank.user.cmd.security.PasswordEncoderImpl;
+import com.springbank.user.cmd.commands.RegisterUserCommand;
+import com.springbank.user.cmd.commands.RemoveUserCommand;
+import com.springbank.user.cmd.commands.UpdateUserCommand;
 import com.springbank.user.core.events.UserRegisteredEvent;
 import com.springbank.user.core.events.UserRemovedEvent;
 import com.springbank.user.core.events.UserUpdatedEvent;
@@ -88,6 +88,7 @@ public class UserAggregate {
     @EventSourcingHandler
     public void on(UserRemovedEvent event) {
         this.id = event.getId();
-        AggregateLifecycle.markDeleted();
+        this.user.setId(event.getId());
+        // AggregateLifecycle.markDeleted();
     }
 }

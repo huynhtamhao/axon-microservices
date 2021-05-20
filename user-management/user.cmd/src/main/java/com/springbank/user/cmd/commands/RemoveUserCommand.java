@@ -1,4 +1,4 @@
-package com.springbank.user.api.cmd.commands;
+package com.springbank.user.cmd.commands;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

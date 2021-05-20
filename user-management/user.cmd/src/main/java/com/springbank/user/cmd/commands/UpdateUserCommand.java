@@ -1,4 +1,4 @@
-package com.springbank.user.api.cmd.commands;
+package com.springbank.user.cmd.commands;
 
 import com.springbank.user.core.models.User;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
-public class RegisterUserCommand {
+public class UpdateUserCommand {
     @TargetAggregateIdentifier
     private String id;
 

@@ -1,6 +1,6 @@
-package com.springbank.user.api.cmd;
+package com.springbank.user.cmd;
 
-import com.springbank.user.api.cmd.commands.RemoveUserCommand;
+import com.springbank.user.cmd.commands.RemoveUserCommand;
 import com.springbank.user.core.dto.BaseResponse;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;

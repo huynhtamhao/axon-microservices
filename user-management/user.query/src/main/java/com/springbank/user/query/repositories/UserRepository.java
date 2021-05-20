@@ -1,4 +1,4 @@
-package com.springbank.user.api.query.repositories;
+package com.springbank.user.query.repositories;
 
 import com.springbank.user.core.models.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
