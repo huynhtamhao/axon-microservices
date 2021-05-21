@@ -1,7 +1,7 @@
 package com.springbank.user.api.cmd.aggregates;
 
-import com.springbank.user.api.cmd.security.PasswordEncoder;
-import com.springbank.user.api.cmd.security.PasswordEncoderImpl;
+import com.springbank.user.api.cmd.security.CommandPasswordEncoder;
+import com.springbank.user.api.cmd.security.CommandPasswordEncoderImpl;
 import com.springbank.user.api.cmd.commands.RegisterUserCommand;
 import com.springbank.user.api.cmd.commands.RemoveUserCommand;
 import com.springbank.user.api.cmd.commands.UpdateUserCommand;
@@ -23,10 +23,10 @@ public class UserAggregate {
     private String id;
     private User user;
 
-    private final PasswordEncoder passwordEncoder;
+    private final CommandPasswordEncoder commandPasswordEncoder;
 
     public UserAggregate() {
-        passwordEncoder = new PasswordEncoderImpl();
+        commandPasswordEncoder = new CommandPasswordEncoderImpl();
     }
 
 //    @Autowired
@@ -37,8 +37,8 @@ public class UserAggregate {
         var newUser = command.getUser();
         newUser.setId(command.getId());
         var password = newUser.getAccount().getPassword();
-        passwordEncoder = new PasswordEncoderImpl();
-        var hashedPassword = passwordEncoder.hashPassword(password);
+        commandPasswordEncoder = new CommandPasswordEncoderImpl();
+        var hashedPassword = commandPasswordEncoder.hashPassword(password);
         newUser.getAccount().setPassword(hashedPassword);
 
         var event = UserRegisteredEvent.builder()
@@ -54,7 +54,7 @@ public class UserAggregate {
         var updatedUser = command.getUser();
         updatedUser.setId(command.getId());
         var password = updatedUser.getAccount().getPassword();
-        var hashedPassword = passwordEncoder.hashPassword(password);
+        var hashedPassword = commandPasswordEncoder.hashPassword(password);
         updatedUser.getAccount().setPassword(hashedPassword);
 
         var event = UserUpdatedEvent.builder()

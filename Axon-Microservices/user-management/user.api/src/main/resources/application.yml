@@ -19,3 +19,5 @@ security:
       signing-key: springbankSigningKey
       token-validity-seconds: 300
       refresh-token-validity-seconds: 1500
+    resource:
+      jwt.key.value: springbankSigningKey
