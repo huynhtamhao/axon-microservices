@@ -2,4 +2,6 @@ dependencies {
     implementation project(':user.core')
     implementation project(':user.cmd')
     implementation project(':user.query')
+    implementation project(':user.oauth2.0')
+    implementation 'org.springframework.security.oauth:spring-security-oauth2:2.5.1.RELEASE'
 }

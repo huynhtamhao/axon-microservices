@@ -29,7 +29,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
 
-    if (name == 'user.core' || name == 'user.cmd' || name == 'user.query' ) {
+    if (name == 'user.core' || name == 'user.cmd' || name == 'user.query' || name == 'user.oauth2.0' ) {
         tasks.jar {
             enabled = true
         }
