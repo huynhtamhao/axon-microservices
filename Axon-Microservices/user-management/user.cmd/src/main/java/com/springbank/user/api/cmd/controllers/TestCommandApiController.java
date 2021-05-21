@@ -1,4 +1,4 @@
-package com.springbank.user.api.cmd;
+package com.springbank.user.api.cmd.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.springbank.user.api.cmd;
+package com.springbank.user.api.cmd.controllers;
 
 import com.springbank.user.api.cmd.commands.RegisterUserCommand;
 import com.springbank.user.api.cmd.dto.RegisterUserResponse;

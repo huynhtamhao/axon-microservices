@@ -1,4 +1,4 @@
-package com.springbank.user.api.query;
+package com.springbank.user.api.query.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

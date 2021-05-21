@@ -1,4 +1,4 @@
-package com.springbank.user.api.query;
+package com.springbank.user.api.query.controllers;
 
 import com.springbank.user.api.query.dto.UserLookupResponse;
 import com.springbank.user.api.query.queries.FindAllUsersQuery;
