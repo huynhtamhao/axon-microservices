@@ -4,7 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PasswordEncoderImpl implements PasswordEncoder {
+public class CommandPasswordEncoderImpl implements CommandPasswordEncoder {
     @Override
     public String hashPassword(String password) {
         var encoder = new BCryptPasswordEncoder(12);
