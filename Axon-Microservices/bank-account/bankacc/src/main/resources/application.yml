@@ -22,5 +22,11 @@ spring:
 # security
 security:
   oauth2:
+    client:
+      client-id: springbankClient
+      client-secret: springbankSecret
+      signing-key: springbankSigningKey
+      user-authorization-uri: http://localhost:8081/oauth/authorize
     resource:
       jwt.key.value: springbankSigningKey
+      token-info-uri: http://localhost:8081/oauth/check_token

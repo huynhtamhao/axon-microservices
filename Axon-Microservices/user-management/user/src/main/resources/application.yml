@@ -17,7 +17,7 @@ security:
       client-id: springbankClient
       client-secret: springbankSecret
       signing-key: springbankSigningKey
-      token-validity-seconds: 300
-      refresh-token-validity-seconds: 1500
+      token-validity-seconds: 300000
+      refresh-token-validity-seconds: 1500000
     resource:
       jwt.key.value: springbankSigningKey

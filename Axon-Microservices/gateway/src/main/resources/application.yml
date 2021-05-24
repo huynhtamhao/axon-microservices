@@ -24,6 +24,47 @@ spring:
           uri: http://localhost:8081/api/v1/userLookup/**
           predicates:
             - Path=/api/v1/userLookup/**
+
+        - id: bankAccCmdApi-OpenAccount
+          uri: http://localhost:8082/api/v1/openBankAccount
+          predicates:
+            - Path=/api/v1/openBankAccount
+
+        - id: bankAccCmdApi-DepositFunds
+          uri: http://localhost:8082/api/v1/depositFunds/**
+          predicates:
+            - Path=/api/v1/depositFunds/**
+
+        - id: bankAccCmdApi-WithdrawFunds
+          uri: http://localhost:8082/api/v1/withdrawFunds/**
+          predicates:
+            - Path=/api/v1/withdrawFunds/**
+
+        - id: bankAccCmdApi-CloseAccount
+          uri: http://localhost:8082/api/v1/closeBankAccount/**
+          predicates:
+            - Path=/api/v1/closeBankAccount/**
+
+        - id: bankAccQueryApi
+          uri: http://localhost:8082/api/v1/bankAccountLookup/**
+          predicates:
+            - Path=/api/v1/bankAccountLookup/**
+
+        - id: bankAPITest
+          uri: http://localhost:8082/api/v1/bank-api-test
+          predicates:
+            - Path=/api/v1/bank-api-test
+
+        - id: userCommandAPITest
+          uri: http://localhost:8081/api/v1/commandAPITest
+          predicates:
+            - Path=/api/v1/commandAPITest
+
+        - id: userQueryAPITest
+          uri: http://localhost:8081/api/v1/queryAPITest
+          predicates:
+            - Path=/api/v1/queryAPITest
+
 #      discovery:
 #        locator:
 #          enabled: true
