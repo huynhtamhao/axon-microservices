@@ -1,4 +1,4 @@
-package com.spingbank.bankacc.core.configuration;
+package com.springbank.bankacc.core.configuration;
 
 import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoClient;

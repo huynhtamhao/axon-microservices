@@ -1,4 +1,4 @@
-package com.spingbank.bankacc.core.models;
+package com.springbank.bankacc.core.models;
 
 public enum AccountType {
     SAVINGS, CURRENT

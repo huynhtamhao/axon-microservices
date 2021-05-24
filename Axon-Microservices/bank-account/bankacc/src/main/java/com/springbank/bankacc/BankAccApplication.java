@@ -1,6 +1,6 @@
-package com.spingbank.bankacc;
+package com.springbank.bankacc;
 
-import com.spingbank.bankacc.core.configuration.AxonConfig;
+import com.springbank.bankacc.core.configuration.AxonConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

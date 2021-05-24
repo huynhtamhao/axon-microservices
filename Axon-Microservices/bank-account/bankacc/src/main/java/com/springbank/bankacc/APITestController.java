@@ -1,4 +1,4 @@
-package com.spingbank.bankacc;
+package com.springbank.bankacc;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

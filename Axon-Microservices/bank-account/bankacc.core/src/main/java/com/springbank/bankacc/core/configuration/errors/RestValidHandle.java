@@ -1,4 +1,4 @@
-package com.spingbank.bankacc.core.configuration.errors;
+package com.springbank.bankacc.core.configuration.errors;
 
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
