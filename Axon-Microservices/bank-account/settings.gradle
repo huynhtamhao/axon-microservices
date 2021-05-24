@@ -1,0 +1,3 @@
+rootProject.name = 'bank-account'
+
+include('bankacc', 'bankacc.core', 'bankacc.cmd', 'bankacc.query')

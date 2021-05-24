@@ -1,2 +1,2 @@
-rootProject.name = 'user.query.api'
+rootProject.name = 'user.query'
 include('user.core')

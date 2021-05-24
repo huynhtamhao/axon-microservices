@@ -1,0 +1,8 @@
+dependencies {
+    implementation project(':bankacc.core')
+    implementation project(':bankacc.cmd')
+    implementation project(':bankacc.query')
+    implementation 'org.springframework.security.oauth:spring-security-oauth2:2.5.1.RELEASE'
+    // Vì project không có config nên sử dụng auto config
+    implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.4.5'
+}

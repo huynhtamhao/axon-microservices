@@ -1,0 +1,58 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.0' apply(false)
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+allprojects {
+    group = 'com.springbank'
+    version = '1.0.0'
+    sourceCompatibility = '16'
+
+    repositories {
+        mavenCentral()
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+subprojects {
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+
+    if (name == 'bankacc.core' || name == 'bankacc.cmd' || name == 'bankacc.query') {
+        tasks.jar {
+            enabled = true
+        }
+        tasks.bootJar {
+            enabled = false
+        }
+//        tasks.forEach {
+//            if (it.name == "bootJar") {
+//                it.enabled = false
+//            }
+//        }
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+        //implementation 'javax.validation:validation-api:2.0.1.Final'
+        implementation 'org.springframework.boot:spring-boot-starter-security'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.axonframework:axon-spring-boot-starter:4.5'
+        // Lombok annotation processor
+        annotationProcessor 'org.projectlombok:lombok'
+        compileOnly 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.springframework.security:spring-security-test'
+    }
+}
