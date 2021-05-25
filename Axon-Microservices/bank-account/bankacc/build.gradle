@@ -5,7 +5,4 @@ dependencies {
     implementation 'org.springframework.security.oauth:spring-security-oauth2:2.5.1.RELEASE'
     // Vì project không có config nên sử dụng auto config
     implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.4.5'
-    implementation group: 'org.glassfish.jaxb', name: 'jaxb-core', version: '3.0.1'
-    implementation group: 'org.glassfish.jaxb', name: 'jaxb-xjc', version: '3.0.1'
-    implementation group: 'org.glassfish.jaxb', name: 'jaxb-jxc', version: '3.0.1'
 }
