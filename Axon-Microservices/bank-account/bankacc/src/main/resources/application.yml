@@ -19,6 +19,12 @@ spring:
     username: root
     password: springbankRootPsw
 
+axon:
+  serializer:
+    general: jackson
+    events: jackson
+    messages: jackson
+
 # security
 security:
   oauth2:
