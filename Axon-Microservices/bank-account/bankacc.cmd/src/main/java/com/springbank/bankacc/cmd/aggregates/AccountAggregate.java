@@ -89,12 +89,12 @@ public class AccountAggregate {
         var event = AccountClosedEvent.builder()
                 .id(command.getId())
                 .build();
-
         AggregateLifecycle.apply(event);
     }
 
     @EventSourcingHandler
     public void on(AccountClosedEvent event) {
-        AggregateLifecycle.markDeleted();
+        this.id = event.getId();
+//        AggregateLifecycle.markDeleted();
     }
 }

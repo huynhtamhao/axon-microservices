@@ -30,12 +30,12 @@ public class CloseAccountController {
                     .id(id)
                     .build();
 
-            commandGateway.send(command);
+            commandGateway.sendAndWait(command);
 
             return new ResponseEntity<>(new BaseResponse("Bank account successfully closed!"), HttpStatus.OK);
         } catch (Exception e) {
             var safeErrorMessage = "Error while processing request to close bank account for id - " + id;
-            System.out.println(e.toString());
+            e.printStackTrace();
 
             return new ResponseEntity<>(new BaseResponse(safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
         }
